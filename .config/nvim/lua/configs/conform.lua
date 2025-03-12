@@ -4,6 +4,7 @@ local options = {
     css = { "prettier" },
     html = { "prettier" },
     python = { "ruff_format" },
+    yaml = { "yamlfmt" },
   },
 
   format_on_save = {
