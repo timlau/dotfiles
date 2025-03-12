@@ -1,10 +1,14 @@
 -- load defaults i.e lua_lsp
 require("nvchad.configs.lspconfig").defaults()
+require("lspconfig").html.setup {}
+require("lspconfig").clangd.setup {}
+require("lspconfig").markdown_oxide.setup {}
+require("lspconfig").autotools_ls.setup {}
 
 local lspconfig = require "lspconfig"
 
 -- EXAMPLE
-local servers = { "html", "cssls", "ruff", "pyright" }
+local servers = { "html", "cssls", "ruff", "autotools_ls" }
 local nvlsp = require "nvchad.configs.lspconfig"
 
 -- lsps with default config
