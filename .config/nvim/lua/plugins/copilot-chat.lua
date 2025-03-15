@@ -15,14 +15,14 @@ return {
     }
   end,
   keys = {
-    { "<c-s>", "<CR>", ft = "copilot-chat", desc = "Submit Prompt", remap = true },
+    { "<c-s>", "<CR>", ft = "copilot-chat", desc = "Copilot Submit Prompt", remap = true },
     { "<leader>a", "", desc = "+ai", mode = { "n", "v" } },
     {
       "<leader>aa",
       function()
         return require("CopilotChat").toggle()
       end,
-      desc = "Toggle (CopilotChat)",
+      desc = "Copilot Toggle Chat",
       mode = { "n", "v" },
     },
     {
@@ -30,7 +30,7 @@ return {
       function()
         return require("CopilotChat").reset()
       end,
-      desc = "Clear (CopilotChat)",
+      desc = "Copilot Clear Chat",
       mode = { "n", "v" },
     },
     {
@@ -44,7 +44,7 @@ return {
           end
         end)
       end,
-      desc = "Quick Chat (CopilotChat)",
+      desc = "Copilot Quick Chat",
       mode = { "n", "v" },
     },
     {
@@ -52,7 +52,7 @@ return {
       function()
         require("CopilotChat").select_prompt()
       end,
-      desc = "Prompt Actions (CopilotChat)",
+      desc = "Copilot Prompt Actions",
       mode = { "n", "v" },
     },
   },
