@@ -9,8 +9,8 @@ M.base46 = {
   theme = "flexoki",
 
   hl_override = {
-    Comment = { italic = true },
-    ["@comment"] = { italic = true },
+    Comment = { italic = true, fg = "dark_purple" },
+    ["@comment"] = { italic = true, fg = "dark_purple" },
   },
 }
 
