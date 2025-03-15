@@ -4,10 +4,8 @@ return {
     "lua",
     "vimdoc",
     "html",
-    "css",
     "python",
     "cmake",
-    "makefile",
     "yaml",
   },
 }
