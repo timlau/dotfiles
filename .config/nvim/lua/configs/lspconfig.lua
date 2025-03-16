@@ -3,16 +3,7 @@ require("nvchad.configs.lspconfig").defaults()
 
 local configs = require "nvchad.configs.lspconfig"
 
-local servers = {
-  html = {},
-  awk_ls = {},
-  bashls = {},
-  ruff = {},
-  cssls = {},
-  autotools_ls = {},
-  markdown_oxide = {},
-  clangd = {},
-}
+local servers = require("configs.vars").lsp_servers
 
 for name, opts in pairs(servers) do
   opts.on_init = configs.on_init
