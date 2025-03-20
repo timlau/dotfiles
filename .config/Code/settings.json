@@ -1,0 +1,48 @@
+{
+    "debug.console.fontSize": 18,
+    "editor.fontFamily": "'JetBrains Mono'",
+    "editor.fontSize": 16,
+    "editor.formatOnSave": true,
+    "editor.formatOnSaveMode": "modifications",
+    "editor.lineNumbers": "relative",
+    "extensions.experimental.affinity": {
+        "asvetliakov.vscode-neovim": 1
+    },
+    "extensions.ignoreRecommendations": true,
+    "files.autoSave": "onWindowChange",
+    "files.exclude": {
+        "**/__pycache__": true,
+        "**/.cache": true,
+        "**/.coverage": true,
+        "**/.coverage.*": true,
+        "**/.hypothesis": true,
+        "**/.mypy_cache": true,
+        "**/.nox": true,
+        "**/.pytest_cache": true,
+        "**/.ruff_cache": true,
+        "**/.tox": true
+    },
+    "git.autofetch": true,
+    "git.confirmSync": false,
+    "mesonbuild.downloadLanguageServer": true,
+    "python.analysis.autoImportCompletions": true,
+    "python.analysis.fixAll": [
+        "source.unusedImports"
+    ],
+    "ruff.configuration": "",
+    "vim.easymotion": true,
+    "vim.handleKeys": {
+        "<C-b>": false,
+        "<C-p>": false,
+        "<C-s>": false,
+        "<C-z>": false
+    },
+    "vim.hlsearch": true,
+    "vim.incsearch": true,
+    "vim.leader": "<space>",
+    "vim.useCtrlKeys": true,
+    "vim.useSystemClipboard": true,
+    "vsicons.dontShowNewVersionMessage": true,
+    "workbench.colorTheme": "flexoki-dark",
+    "workbench.iconTheme": "vscode-icons"
+}
