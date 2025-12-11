@@ -13,13 +13,13 @@
       "ctrl-c": "editor::Copy",
       "ctrl-v": "editor::Paste",
       "ctrl-s": "workspace::Save",
+      "ctrl-super-r": "editor::ToggleRelativeLineNumbers",
+      "ctrl-w": "pane::CloseActiveItem",
     },
   },
 
   {
     "bindings": {
-      "ctrl-w": "pane::CloseActiveItem",
-      "ctrl-super-r": "editor::ToggleRelativeLineNumbers",
       "super-t": "terminal_panel::Toggle",
     },
   },
