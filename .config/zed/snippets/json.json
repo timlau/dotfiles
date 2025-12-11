@@ -1,0 +1,13 @@
+{
+  "snippet": {
+    "prefix": "ux-snippet",
+    "description": "create a new snippetInsert use statement",
+    "body": [
+      "\"${1:snippet}\" : {",
+      "  \"prefix\": \"ux-${2:prefix}\",",
+      "  \"description\": \"${3:description}\",",
+      "  \"body\": [\"${4}\"]",
+      "}"
+    ]
+  }
+}
