@@ -6,7 +6,7 @@
 // To see the default key bindings run `zed: open default keymap`
 // from the command palette.
 [
-  // Editor specific key bindings
+  // Editor specific key bindings (work when editing)
   {
     "context": "Editor",
     "bindings": {
@@ -18,7 +18,7 @@
       "super-r": "editor::ToggleRelativeLineNumbers",
     },
   },
-  // General key bindings
+  // General key bindings (work everywhere in Zed)
   {
     "bindings": {
       "super-t": "terminal_panel::Toggle",
