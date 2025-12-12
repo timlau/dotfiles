@@ -7,19 +7,24 @@
 // custom settings, run `zed: open default settings` from the
 // command palette (cmd-shift-p / ctrl-shift-p)
 {
+  "diagnostics": {
+    "inline": {
+      "enabled": true,
+    },
+  },
   "agent": {
     "default_model": {
-      "provider": "google",
-      "model": "gemini-2.5-flash"
+      "provider": "copilot_chat",
+      "model": "claude-haiku-4.5",
     },
-    "model_parameters": []
+    "model_parameters": [],
   },
   "buffer_font_family": "JetBrains Mono",
   "autosave": "on_focus_change",
   "icon_theme": {
     "mode": "system",
     "light": "Zed (Default)",
-    "dark": "Material Icon Theme"
+    "dark": "Material Icon Theme",
   },
   "current_line_highlight": "none",
   "vim_mode": true,
@@ -30,7 +35,7 @@
   "theme": {
     "mode": "system",
     "light": "Ayu Light",
-    "dark": "Flexoki Dark"
+    "dark": "Flexoki Dark",
   },
 
   "lsp": {
@@ -40,14 +45,14 @@
           "maxLength": 120,
           "lifetimeElisionHints": {
             "enable": "skip_trivial",
-            "useParameterNames": true
+            "useParameterNames": true,
           },
           "closureReturnTypeHints": {
-            "enable": "always"
-          }
-        }
-      }
-    }
+            "enable": "always",
+          },
+        },
+      },
+    },
   },
   "theme_overrides": {
     "Flexoki Dark": {
@@ -57,13 +62,13 @@
       "syntax": {
         "comment": {
           "font_style": "italic",
-          "color": "#19665E"
+          "color": "#19665E",
         },
         "comment.doc": {
           "font_style": "italic",
-          "color": "#19661F"
-        }
-      }
-    }
-  }
+          "color": "#19661F",
+        },
+      },
+    },
+  },
 }
