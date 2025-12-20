@@ -59,6 +59,18 @@
       },
     },
   },
+  "languages": {
+    "Python": {
+      "language_servers": [
+        "ty",
+        "ruff",
+        "!basedpyright",
+        "!pyrefly",
+        "!pyright",
+        "!pylsp",
+      ],
+    },
+  },
   "theme_overrides": {
     "Flexoki Dark": {
       "editor.background": "#000000",
