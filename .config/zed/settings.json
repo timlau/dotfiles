@@ -36,7 +36,7 @@
   "theme": {
     "mode": "system",
     "light": "Ayu Light",
-    "dark": "Flexoki Dark",
+    "dark": "Ayu Dark",
   },
   "file_types": { "XML": ["*.xml.in", "*.xml.in.in"] },
   "outline_panel": { "dock": "right" },
