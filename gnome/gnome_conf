@@ -1,11 +1,11 @@
 #!/bin/fish
 argparse h/help -- $argv
 or return
-
+set usage "Usage: gnome_conf [-h | --help] backup|restore"
 # Checking for _flag_h and _flag_help is equivalent
 # We check if it has been given at least once
 if set -ql _flag_h
-    echo "Usage: gnome_conf [-h | --help] backup|restore" >&2
+    echo "$usage" >&2
     return 1
 end
 for arg in $argv
@@ -19,6 +19,6 @@ for arg in $argv
             dconf load /org/gnome/shell/extensions/ <~/dotfiles/gnome/org_gnome_shell_extensions.ini
             dconf load /org/gnome/desktop/wm/keybindings/ <~/dotfiles/gnome/org_gnome_desktop_wm_keybindings.ini
         case '*'
-            echo Unknown command
+            echo "$usage"
     end
 end
