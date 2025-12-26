@@ -23,6 +23,7 @@ end
 
 function upd --description 'update dotfiles to/from github'
     cd ~/dotfiles
+    git add .
     git commit -a -m "update config"
     git pull --rebase origin main
     git push
