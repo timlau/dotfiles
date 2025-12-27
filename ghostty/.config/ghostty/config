@@ -23,11 +23,11 @@
 
 font-family = "JetBrainsMono Nerd Font"
 font-style = "JetBrainsMono NFM Light"
-font-size = 12
+font-size = 13
 
-background = #050505
+# background = #050505
 
-theme = Flexoki Dark
+theme = Wez
 
 shell-integration = fish
 
