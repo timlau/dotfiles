@@ -31,3 +31,5 @@ theme = Wez
 
 shell-integration = fish
 
+background-opacity = 0.9
+
