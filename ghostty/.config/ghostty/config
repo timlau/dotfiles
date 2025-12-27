@@ -32,4 +32,5 @@ theme = Wez
 shell-integration = fish
 
 background-opacity = 0.9
+initial-command = tmux
 
