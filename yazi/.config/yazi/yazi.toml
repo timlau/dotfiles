@@ -1,0 +1,16 @@
+[opener]
+play = [{ run = 'mpv "$@"', orphan = true, for = "unix" }]
+edit = [{ run = 'nvim "$@"', block = true }]
+open = [{ run = 'xdg-open "$@"', desc = "Open" }]
+
+[open]
+rules = [
+  { mime = "text/*", use = "edit" },
+  { mime = "video/*", use = "play" },
+
+  # { mime = "application/json", use = "edit" },
+  { name = "*.json", use = "edit" },
+
+  # Multiple openers for a single rule
+  { name = "*.html", use = ["open", "edit"] },
+]
