@@ -31,7 +31,7 @@ theme = Wez
 
 shell-integration = fish
 
-background-opacity = 0.9
+background-opacity = 0.8
 initial-command = tmux
 #window-decoration = false
 window-height=40
