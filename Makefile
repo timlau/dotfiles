@@ -25,3 +25,5 @@ stow-all:
 		stow -R -v $$dir; \
 	done	
 
+extension-install:
+	@./gnome/gnome_extentions.fish

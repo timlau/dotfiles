@@ -1,16 +1,23 @@
 #!/bin/fish
+set installed_extentions $(gnome-extensions list --user)
 set config_file ~/dotfiles/gnome/extensions.conf
 set temp_dir $(mktemp -d .gnome_extensions_XXXXX)
 cat "$config_file" -p | while read -l extension
-    set version_tag $(curl -Lfs "https://extensions.gnome.org/extension-query/?search=$extension" | jq '.extensions[0] | .shell_version_map | map(.pk) | max')
-    set extension_url "https://extensions.gnome.org/download-extension/$extension?version_tag=$version_tag"
-    echo " ->> Extension : $extension"
-    echo "            URL: $extension_url"
-    if wget -q -O $temp_dir/$extension.zip $extension_url
-        echo "     - Downloaded : $extension.zip"
+    if not contains $extension $installed_extentions
+        set version_tag $(curl -s "https://extensions.gnome.org/api/v1/extensions/$extension/versions/" | jq .count)
+        set extension_url "https://extensions.gnome.org/api/v1/extensions/$extension/versions/$version_tag/?format=zip"
+        echo " ->> Extension : $extension"
+        # echo "            URL: $extension_url"
+        if wget -q -O $temp_dir/$extension.zip $extension_url
+            echo "     - Installing : $extension.zip"
+            gnome-extensions install $temp_dir/$extension.zip
+        else
+            echo "     - Could not download : $extension.zip"
+        end
     else
-        echo "     - Could not download : $extension.zip"
+        echo " ->> $extension is allready installed"
     end
 end
-tree -f $temp_dir
 rm -rf $temp_dir
+echo ""
+echo "Logoff & Logon to make installed extensions active"
