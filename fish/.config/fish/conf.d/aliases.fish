@@ -22,12 +22,13 @@ function vi --wraps nvim --description 'alias vi=nvim'
 end
 
 function upd --description 'update dotfiles to/from github'
+    set current_dir $(pwd)
     cd ~/dotfiles
     git add .
     git commit -a -m ". update configuration"
     git pull --rebase origin main
     git push
-    cd -
+    cd $current_dir
 end
 
 function y --description 'yazi filemanager change to cwd on exit'
