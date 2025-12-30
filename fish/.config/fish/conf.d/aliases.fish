@@ -9,10 +9,6 @@ function gco --wraps git --description 'alias gco=git checkout'
     git checkout $argv
 end
 
-function cat --wraps bat --description 'alias cat=bat'
-    bat $argv
-end
-
 function lg --wraps lazygit --description 'alias lg=lazygit'
     lazygit $argv
 end
@@ -25,7 +21,11 @@ function upd --description 'update dotfiles to/from github'
     set current_dir $(pwd)
     cd ~/dotfiles
     git add .
-    git commit -a -m ". update configuration"
+    if count $argv -eq 0
+        git commit -a -m ". update configuration"
+    else
+        git commit -a -m "$argv"
+    end
     git pull --rebase origin main
     git push
     cd $current_dir
