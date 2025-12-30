@@ -1,31 +1,38 @@
 #!/bin/fish
 argparse h/help -- $argv
 or return
+
+# Constants
 set usage "Usage: gnome_conf [-h | --help] backup|restore"
+set main_dir ~/dotfiles/gnome
+set config_file $main_dir/sections.conf
+set backup_dir $main_dir/settings
+
 # Checking for _flag_h and _flag_help is equivalent
 # We check if it has been given at least once
 if set -ql _flag_h
     echo "$usage" >&2
     return 1
 end
+
+# cheak that there is some arguments
 if test (count $argv) -eq 0
     echo "$usage" >&2
     return 1
 end
 
-set main_dir ~/dotfiles/gnome
-set config_file $main_dir/sections.conf
-set backup_dir $main_dir/settings
+# chwck that there is legal argument
+set legal_commands backup restore
+set command (string lower $argv[-1])
+if not contains $command $legal_commands
+    echo "$usage" >&2
+    return 1
+end
+
 # Function: process_paths
 # Description: Reads a config file and outputs "section_path [TAB] filename.ini"
 function process_paths
     set -l config_file ~/dotfiles/gnome/sections.conf
-
-    # if not test -f "$config_file"
-    #     echo "Error: File '$config_file' not found." >&2
-    #     return 1
-    # end
-
     cat "$config_file" -p | while read -l line
         # Clean the line and skip comments/empty space
         set -l clean_line (string trim $line)
@@ -43,7 +50,7 @@ end
 
 # Capture the function output and iterate through the pairs
 process_paths | while read -l -d \t section backup_file
-    switch $argv[1]
+    switch $command
         case backup
             echo "backup $section into $backup_dir/$backup_file"
             dconf dump $section >$backup_dir/$backup_file
