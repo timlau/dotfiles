@@ -21,6 +21,7 @@ function upd --description 'update dotfiles to/from github'
     set current_dir $(pwd)
     cd ~/dotfiles
     git add .
+    # check for optional commit message
     if test (count $argv) -eq 0
         git commit -a -m ". update configuration"
     else
