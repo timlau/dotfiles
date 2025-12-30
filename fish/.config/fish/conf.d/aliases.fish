@@ -1,5 +1,3 @@
-# This file is managed by Ansible. Do not edit manually.
-
 # Define aliases (which are functions in fish)
 function ll --wraps ls --description 'alias ll=ls -lhA'
     ls -lhA $argv
