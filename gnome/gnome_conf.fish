@@ -33,7 +33,7 @@ end
 # Description: Reads a config file and outputs "section_path [TAB] filename.ini"
 function process_paths
     set -l config_file ~/dotfiles/gnome/sections.conf
-    cat "$config_file" -p | while read -l line
+    cat "$config_file" | while read -l line
         # Clean the line and skip comments/empty space
         set -l clean_line (string trim $line)
         if test -z "$clean_line"; or string match -q "#*" "$clean_line"
