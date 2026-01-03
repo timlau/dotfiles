@@ -15,6 +15,3 @@ initial-command = tmux
 # window-decoration = false
 window-height=40
 window-width=160
-
-
-
