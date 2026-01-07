@@ -52,10 +52,10 @@ end
 process_paths | while read -l -d \t section backup_file
     switch $command
         case backup
-            echo "backup $section into $backup_dir/$backup_file"
+            echo " ->> backup $section into $backup_dir/$backup_file"
             dconf dump $section >$backup_dir/$backup_file
         case restore
-            echo "restore $section from $backup_dir/$backup_file"
+            echo " ->> restore $section from $backup_dir/$backup_file"
             dconf load $section <$backup_dir/$backup_file
     end
 end
