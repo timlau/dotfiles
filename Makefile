@@ -41,5 +41,5 @@ ifneq ($(shell git diff-index --quiet HEAD; echo $$?), 0)
 endif
 
 
-sync: git-pull git-commit
+sync: git-pull git-commit gnome-restore
 	@echo "settings are synced"
