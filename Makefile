@@ -36,8 +36,8 @@ git-pull:
 git-commit:
 ifneq ($(shell git diff-index --quiet HEAD; echo $$?), 0)
 	@echo " ->> Changes detected, committing..."
-	@git add .
-	@git commit -m "$(COMMIT_MSG)"
+	@git add . --no-verbose
+	@git commit -m "$(COMMIT_MSG)" --quiet
 endif
 
 
