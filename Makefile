@@ -31,7 +31,7 @@ extension-install:
 
 
 git-pull:
-	@git pull origin main
+	@git pull origin main --quiet
 
 git-commit:
 ifneq ($(shell git diff-index --quiet HEAD; echo $$?), 0)
