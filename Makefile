@@ -1,5 +1,6 @@
 STOW_DIRS=fish ghostty nvim onedrive starship tmux yazi zed
 EXTENSIONS= $(shell ls -1 /home/tim/.local/share/gnome-shell/extensions)
+COMMIT_MSG ?= "update settings"
 
 all:
 	@echo "Nothing to do"
@@ -27,3 +28,17 @@ stow-all:
 
 extension-install:
 	@./gnome/gnome_extentions.fish
+
+
+git-pull:
+	@git pull origin main
+
+git-commit:
+	git add	.
+	git commit -m $(COMMIT_MSG)
+
+git-check: git-commit
+	git diff-index --quiet HEAD
+
+sync: git-pull git-check
+		echo "settings are synced"
