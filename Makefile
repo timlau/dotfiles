@@ -1,6 +1,6 @@
 STOW_DIRS=fish ghostty nvim onedrive starship tmux yazi zed
 EXTENSIONS= $(shell ls -1 /home/tim/.local/share/gnome-shell/extensions)
-COMMIT_MSG ?= update settings
+COMMIT_MSG ?= . Updated settings
 
 all:
 	@echo "Nothing to do"
