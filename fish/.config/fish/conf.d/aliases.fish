@@ -22,7 +22,7 @@ function upd --description 'update dotfiles to/from github'
     if test (count $argv) -eq 0
         make sync
     else
-        COMMIT_MSG="$argv" make sync
+        COMMIT_MSG=$argv make sync
     end
     cd $current_dir
 end

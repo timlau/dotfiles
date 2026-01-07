@@ -1,6 +1,6 @@
 STOW_DIRS=fish ghostty nvim onedrive starship tmux yazi zed
 EXTENSIONS= $(shell ls -1 /home/tim/.local/share/gnome-shell/extensions)
-COMMIT_MSG ?= "update settings"
+COMMIT_MSG ?= update settings
 
 all:
 	@echo "Nothing to do"
@@ -37,7 +37,7 @@ git-commit:
 ifneq ($(shell git diff-index --quiet HEAD; echo $$?), 0)
 	@echo " ->> Changes detected, committing..."
 	@git add .
-	@git commit -m $(COMMIT_MSG)
+	@git commit -m "$(COMMIT_MSG)"
 endif
 
 
