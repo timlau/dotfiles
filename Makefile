@@ -42,4 +42,4 @@ endif
 
 
 sync: git-pull git-commit gnome-restore
-	@echo "settings are synced"
+	@echo " ->> Settings are synced and updated"
