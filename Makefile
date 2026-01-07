@@ -34,11 +34,12 @@ git-pull:
 	@git pull origin main
 
 git-commit:
-	git add	.
-	git commit -m $(COMMIT_MSG)
+ifneq ($(shell git diff-index --quiet HEAD; echo $$?), 0)
+	@echo " ->> Changes detected, committing..."
+	@git add .
+	@git commit -m $(COMMIT_MSG)
+endif
 
-git-check: git-commit
-	git diff-index --quiet HEAD
 
-sync: git-pull git-check
-		echo "settings are synced"
+sync: git-pull git-commit
+	@echo "settings are synced"
