@@ -38,6 +38,7 @@ ifneq ($(shell git diff-index --quiet HEAD; echo $$?), 0)
 	@echo " ->> Changes detected, committing..."
 	@git add . --no-verbose
 	@git commit -m "$(COMMIT_MSG)" --quiet
+	@git push
 endif
 
 
