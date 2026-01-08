@@ -15,14 +15,26 @@ function vi --wraps nvim --description 'alias vi=nvim'
     nvim $argv
 end
 
-function upd --description 'update dotfiles to/from github'
+function upd-back --description 'update dotfiles to/from github and backup gnome settings'
     set current_dir $(pwd)
     cd $HOME/dotfiles
     # check for optional commit message
     if test (count $argv) -eq 0
         make sync
     else
-        COMMIT_MSG=$argv make sync
+        COMMIT_MSG=$argv make sync-backup
+    end
+    cd $current_dir
+end
+
+function upd --description 'update dotfiles to/from github and restore gnome settings'
+    set current_dir $(pwd)
+    cd $HOME/dotfiles
+    # check for optional commit message
+    if test (count $argv) -eq 0
+        make sync
+    else
+        COMMIT_MSG=$argv make sync-restore
     end
     cd $current_dir
 end
