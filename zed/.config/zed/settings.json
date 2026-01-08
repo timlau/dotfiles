@@ -41,7 +41,8 @@
   "file_types": { "XML": ["*.xml.in", "*.xml.in.in"] },
   "outline_panel": { "dock": "right" },
   "project_panel": { "dock": "right" },
-  "git_panel": { "dock": "right" },
+  "git_panel": { "tree_view": true,
+                 "dock": "right" },
 
   "lsp": {
     "rust-analyzer": {
