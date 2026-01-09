@@ -20,7 +20,7 @@ function upd-back --description 'update dotfiles to/from github and backup gnome
     cd $HOME/dotfiles
     # check for optional commit message
     if test (count $argv) -eq 0
-        make sync
+        make sync-backup
     else
         COMMIT_MSG=$argv make sync-backup
     end
@@ -32,7 +32,7 @@ function upd --description 'update dotfiles to/from github and restore gnome set
     cd $HOME/dotfiles
     # check for optional commit message
     if test (count $argv) -eq 0
-        make sync
+        make sync-restore
     else
         COMMIT_MSG=$argv make sync-restore
     end
