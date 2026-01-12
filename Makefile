@@ -23,7 +23,7 @@ gnome-restore:
 stow-all:
 	@for dir in $(STOW_DIRS); do \
 		echo " ->> Running stow on $$dir"; \
-		stow -R -v $$dir; \
+		stow -R  $$dir; \
 	done	
 
 extension-install:
