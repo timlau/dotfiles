@@ -23,7 +23,14 @@ gnome-restore:
 stow-all:
 	@for dir in $(STOW_DIRS); do \
 		echo " ->> Running stow on $$dir"; \
-		stow -R  $$dir; \
+		stow --target=${HOME} -R  $$dir; \
+	done	
+
+# un-stow directories
+unstow-all:
+	@for dir in $(STOW_DIRS); do \
+		echo " ->> Running stow (delete) on $$dir"; \
+		stow --target=${HOME} -D $$dir; \
 	done	
 
 extension-install:
