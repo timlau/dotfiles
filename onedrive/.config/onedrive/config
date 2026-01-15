@@ -41,7 +41,8 @@
 #debug_https = "false"
 
 ## This setting controls whether 'inotify' events should be delayed or not.
-#delay_inotify_processing = "false"
+delay_inotify_processing = "true"
+inotify_delay = "10"
 
 ## This option determines whether the client will conduct integrity validation on files downloaded from Microsoft OneDrive.
 #disable_download_validation = "false"
