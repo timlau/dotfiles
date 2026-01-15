@@ -13,5 +13,5 @@ shell-integration = fish
 background-opacity = 0.8
 initial-command = tmux
 # window-decoration = false
-window-height=40
-window-width=160
+window-height=58
+window-width=168
