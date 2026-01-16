@@ -1,3 +1,4 @@
+
 // Zed keymap
 //
 // For information on binding keys, see the Zed
@@ -17,11 +18,12 @@
       "ctrl-w": "pane::CloseActiveItem",
       "super-r": "editor::ToggleRelativeLineNumbers",
     },
+
   },
   // General key bindings (work everywhere in Zed)
   {
     "bindings": {
-      "super-t": "terminal_panel::Toggle",
+      "ctrl-alt-t": "terminal_panel::Toggle",
       "super-d": "workspace::CloseAllDocks",
       "ctrl-p": "file_finder::Toggle",
     },
