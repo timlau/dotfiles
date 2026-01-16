@@ -1,4 +1,4 @@
-STOW_DIRS=fish ghostty nvim onedrive starship tmux yazi zed shotcut
+STOW_DIRS=fish ghostty nvim starship tmux yazi zed shotcut mpv
 EXTENSIONS= $(shell ls -1 /home/tim/.local/share/gnome-shell/extensions)
 COMMIT_MSG ?= . Updated configuration files
 
