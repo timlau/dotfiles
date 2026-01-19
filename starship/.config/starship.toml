@@ -71,3 +71,7 @@ vimcmd_symbol = '[➙ ](bold fg:color_aqua)'
 vimcmd_replace_one_symbol = '[](bold fg:color_purple)'
 vimcmd_replace_symbol = '[](bold fg:color_purple)'
 vimcmd_visual_symbol = '[](bold fg:color_yellow)'
+
+[container]
+disabled = false
+format = "[🛢  $container_id ](bold fg:color_purple) "
