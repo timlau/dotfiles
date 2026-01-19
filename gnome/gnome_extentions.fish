@@ -17,7 +17,7 @@ end
 set installed_extentions $(gnome-extensions list --user)
 set config_file ~/dotfiles/gnome/extensions.conf
 set temp_dir $(mktemp -d .gnome_extensions_XXXXX)
-cat "$config_file" -p | while read -l extension
+cat "$config_file" | while read -l extension
     if not contains $extension $installed_extentions
         echo " ->> Extension : $extension"
         set version_tag $(curl -s "https://extensions.gnome.org/api/v1/extensions/$extension/versions/?page=1&page_size=100" | jq .count)
