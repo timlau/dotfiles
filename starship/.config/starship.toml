@@ -9,6 +9,7 @@ $directory\
 $git_branch\
 $git_status\
 [ ](fg:color_aqua)\
+$container\
 $line_break$character"""
 
 palette = 'gruvbox_dark'
@@ -74,4 +75,4 @@ vimcmd_visual_symbol = '[](bold fg:color_yellow)'
 
 [container]
 disabled = false
-format = "[🛢  $container_id ](bold fg:color_purple) "
+format = "🛢  "
