@@ -8,7 +8,7 @@
 // command palette (cmd-shift-p / ctrl-shift-p)
 {
   "which_key": {
-    "enabled": true
+    "enabled": true,
   },
   "format_on_save": "off",
   "colorize_brackets": true,
@@ -40,13 +40,12 @@
   "theme": {
     "mode": "system",
     "light": "Ayu Light",
-    "dark": "Github Dark",
+    "dark": "GitHub Dark Default",
   },
   "file_types": { "XML": ["*.xml.in", "*.xml.in.in"] },
   "outline_panel": { "dock": "right" },
   "project_panel": { "dock": "right" },
-  "git_panel": { "tree_view": true,
-                 "dock": "right" },
+  "git_panel": { "tree_view": true, "dock": "right" },
 
   "lsp": {
     "rust-analyzer": {
@@ -64,7 +63,9 @@
       },
     },
     "clangd": {
-        "arguments": ["-background-index", "-compile-commands-dir=build"]
+      "binary": {
+        "arguments": ["-background-index", "-compile-commands-dir=build"],
+      },
     },
   },
   "languages": {
