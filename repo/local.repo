@@ -1,0 +1,6 @@
+[local-audio]
+name=Local Audio repo
+baseurl=file:///home/tim/OneDrive/RPMS
+enabled=1
+gpgcheck=0
+

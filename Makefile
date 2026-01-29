@@ -55,3 +55,6 @@ sync-restore: git-pull git-commit gnome-restore
 sync-backup: git-pull gnome-backup git-commit
 	@echo " ->> Settings are synced and updated"
 
+stow-repo:
+	sudo stow -R repo -t /etc/yum.repos.d/
+
