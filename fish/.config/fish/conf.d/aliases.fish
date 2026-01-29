@@ -47,3 +47,7 @@ function y --description 'yazi filemanager change to cwd on exit'
     end
     rm -f -- "$tmp"
 end
+
+function repo-upd --description "update local audio reop"
+    createrepo_c $HOME/OneDrive/RPMS
+end
