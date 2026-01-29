@@ -40,7 +40,7 @@
   "theme": {
     "mode": "system",
     "light": "Ayu Light",
-    "dark": "GitHub Dark Default",
+    "dark": "GitHub Dark",
   },
   "file_types": { "XML": ["*.xml.in", "*.xml.in.in"] },
   "outline_panel": { "dock": "right" },
@@ -81,18 +81,18 @@
     },
   },
   "theme_overrides": {
-    "Flexoki Dark": {
+    "GitHub Dark": {
       "editor.background": "#000000",
       "terminal.background": "#000000",
       "editor.gutter.background": "#060606",
       "syntax": {
         "comment": {
           "font_style": "italic",
-          "color": "#19665E",
+          "color": "#20918f",
         },
         "comment.doc": {
           "font_style": "italic",
-          "color": "#19661F",
+          "color": "#20918f",
         },
       },
     },
