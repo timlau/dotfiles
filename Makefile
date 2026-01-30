@@ -5,7 +5,7 @@ COMMIT_MSG ?= . Updated configuration files
 all:
 	@echo "Nothing to do"
 
-
+# show the gnome extensions installed
 show-extensions:
 	@for ext in $(EXTENSIONS); do \
 		echo "$$ext"; \
@@ -33,13 +33,15 @@ unstow-all:
 		stow --target=${HOME} -D $$dir; \
 	done	
 
+# install gnome extensions from list
 extension-install:
 	@./gnome/gnome_extentions.fish
 
-
+# pull the latest changes from git
 git-pull:
 	@git pull origin main --quiet
 
+# push changes to git if any changes are detected
 git-commit:
 ifneq ($(shell git diff-index --quiet HEAD; echo $$?), 0)
 	@echo " ->> Changes detected, committing..."
@@ -48,13 +50,15 @@ ifneq ($(shell git diff-index --quiet HEAD; echo $$?), 0)
 	@git push --quiet origin main
 endif
 
-
+# restore the settings from git and gnome
 sync-restore: git-pull git-commit gnome-restore
 	@echo " ->> Settings are synced and updated"
 
+# backup the settings to git and gnome
 sync-backup: git-pull gnome-backup git-commit
 	@echo " ->> Settings are synced and updated"
 
+# stow repo files to /etc/yum.repos.d/
 stow-repo:
 	sudo stow -R repo -t /etc/yum.repos.d/
 
