@@ -52,6 +52,11 @@ function repo-upd --description "update local audio reop"
     createrepo_c $HOME/OneDrive/RPMS
 end
 
+function cm-clean --description "cmake clean build directory"
+    echo "Removing build directory..."
+    rm -rf build
+end
+
 function cm-cfg --description "cmake -B -DCMAKE_BUILD_TYPE=Release"
     set cores (nproc)
     set cores (math $cores - 2)
