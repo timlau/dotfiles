@@ -53,6 +53,9 @@ function repo-upd --description "update local audio reop"
 end
 
 function cm-cfg --description "cmake -B -DCMAKE_BUILD_TYPE=Release"
+    set cores (nproc)
+    set cores (math $cores - 2)
+    set -x CMAKE_BUILD_PARALLEL_LEVEL $cores
     cmake -B build -DCMAKE_BUILD_TYPE=Release -G Ninja $argv
 end
 
