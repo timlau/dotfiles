@@ -51,3 +51,11 @@ end
 function repo-upd --description "update local audio reop"
     createrepo_c $HOME/OneDrive/RPMS
 end
+
+function cm --description "cmake -B -DCMAKE_BUILD_TYPE=Release"
+    cmake -B build -DCMAKE_BUILD_TYPE=Release $argv
+end
+
+function cb --description "cmake build"
+    cmake --build build --config Release $argv
+end
