@@ -69,3 +69,13 @@ function cm-build --description "cmake build"
     set cores (math $cores - 1)
     cmake --build build --config Release -j$cores $argv
 end
+
+function cm-cfg-rpm --description "cmake -B -DCMAKE_BUILD_TYPE=Release with RPM build flags"
+    set cores (nproc)
+    set cores (math $cores - 2)
+    set -x CMAKE_BUILD_PARALLEL_LEVEL $cores
+    set rpmflags $(rpm --eval '%{build_cxxflags}')
+    set newflags (echo $rpmflags | string collect | string replace "flto=auto" "flto=$cores")
+    echo "=> Using RPM CXXFLAGS: $newflags"
+    CXXFLAGS=$newflags cmake -B build -DCMAKE_BUILD_TYPE=Release -G Ninja $argv
+end
