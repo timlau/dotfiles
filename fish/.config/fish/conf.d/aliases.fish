@@ -52,22 +52,44 @@ function repo-upd --description "update local audio reop"
     createrepo_c $HOME/OneDrive/RPMS
 end
 
-function cm-clean --description "cmake clean build directory"
+function cm-clean-all --description "cmake all clean build directories"
     echo "Removing build directory..."
     rm -rf build
+end
+
+function cm-clean --description "cmake clean build directory (Release)"
+    echo "Removing build directory..."
+    rm -rf build/release
+end
+function cm-clean-dbg --description "cmake clean build directory (Debug)"
+    echo "Removing build directory..."
+    rm -rf build/debug
 end
 
 function cm-cfg --description "cmake -B -DCMAKE_BUILD_TYPE=Release"
     set cores (nproc)
     set cores (math $cores - 2)
     set -x CMAKE_BUILD_PARALLEL_LEVEL $cores
-    cmake -B build -DCMAKE_BUILD_TYPE=Release -G Ninja $argv
+    cmake -B build/release -DCMAKE_BUILD_TYPE=Release -G Ninja $argv
+end
+
+function cm-cfg-dbg --description "cmake -B -DCMAKE_BUILD_TYPE=Debug"
+    set cores (nproc)
+    set cores (math $cores - 2)
+    set -x CMAKE_BUILD_PARALLEL_LEVEL $cores
+    cmake -B build/debug -DCMAKE_BUILD_TYPE=Debug -G Ninja $argv
 end
 
 function cm-build --description "cmake build"
     set cores (nproc)
     set cores (math $cores - 1)
-    cmake --build build --config Release -j$cores $argv
+    cmake --build build/release --config Release -j$cores $argv
+end
+
+function cm-build-dbg --description "cmake build"
+    set cores (nproc)
+    set cores (math $cores - 1)
+    cmake --build build/debug --config Debug -j$cores $argv
 end
 
 function cm-cfg-rpm --description "cmake -B -DCMAKE_BUILD_TYPE=Release with RPM build flags"
@@ -77,5 +99,5 @@ function cm-cfg-rpm --description "cmake -B -DCMAKE_BUILD_TYPE=Release with RPM 
     set rpmflags $(rpm --eval '%{build_cxxflags}')
     set newflags (echo $rpmflags | string collect | string replace "flto=auto" "flto=$cores")
     echo "=> Using RPM CXXFLAGS: $newflags"
-    CXXFLAGS=$newflags cmake -B build -DCMAKE_BUILD_TYPE=Release -G Ninja $argv
+    CXXFLAGS=$newflags cmake -B build/release -DCMAKE_BUILD_TYPE=Release -G Ninja $argv
 end
