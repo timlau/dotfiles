@@ -101,3 +101,8 @@ function cm-cfg-rpm --description "cmake -B -DCMAKE_BUILD_TYPE=Release with RPM 
     echo "=> Using RPM CXXFLAGS: $newflags"
     CXXFLAGS=$newflags cmake -B build/release -DCMAKE_BUILD_TYPE=Release -G Ninja $argv
 end
+
+function cm-inst --description "cmake install in local .BUILDROOT/usr"
+    rm -rf .BUILDROOT
+    cmake --install build --prefix ./BUILDROOT/usr $argv
+end
