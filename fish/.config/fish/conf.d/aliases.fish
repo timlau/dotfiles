@@ -82,13 +82,13 @@ end
 
 function cm-build --description "cmake build"
     set cores (nproc)
-    set cores (math $cores - 1)
+    set cores (math $cores - 2)
     cmake --build build/release --config Release -j$cores $argv
 end
 
 function cm-build-dbg --description "cmake build"
     set cores (nproc)
-    set cores (math $cores - 1)
+    set cores (math $cores - 2)
     cmake --build build/debug --config Debug -j$cores $argv
 end
 
