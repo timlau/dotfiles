@@ -61,7 +61,7 @@ function cm-clean --description "cmake clean build directory (Release)"
     echo "Removing build directory..."
     rm -rf build/release
 end
-function cm-clean-dbg --description "cmake clean build directory (Debug)"
+function cm-dbg-clean --description "cmake clean build directory (Debug)"
     echo "Removing build directory..."
     rm -rf build/debug
 end
@@ -73,7 +73,7 @@ function cm-cfg --description "cmake -B -DCMAKE_BUILD_TYPE=Release"
     cmake -B build/release -DCMAKE_BUILD_TYPE=Release -G Ninja $argv
 end
 
-function cm-cfg-dbg --description "cmake -B -DCMAKE_BUILD_TYPE=Debug"
+function cm-dbg-cfg --description "cmake -B -DCMAKE_BUILD_TYPE=Debug"
     set cores (nproc)
     set cores (math $cores - 2)
     set -x CMAKE_BUILD_PARALLEL_LEVEL $cores
@@ -86,7 +86,7 @@ function cm-build --description "cmake build"
     cmake --build build/release --config Release -j$cores $argv
 end
 
-function cm-build-dbg --description "cmake build"
+function cm-dbg-build --description "cmake build"
     set cores (nproc)
     set cores (math $cores - 2)
     cmake --build build/debug --config Debug -j$cores $argv
@@ -104,5 +104,10 @@ end
 
 function cm-inst --description "cmake install in local .BUILDROOT/usr"
     rm -rf .BUILDROOT
-    cmake --install build --prefix ./BUILDROOT/usr $argv
+    cmake --install build/release --prefix ./BUILDROOT/usr $argv
+end
+
+function cm-dbg-inst --description "cmake install in local .BUILDROOT/usr"
+    rm -rf .BUILDROOT
+    cmake --install build/debug --prefix ./BUILDROOT/usr $argv
 end
