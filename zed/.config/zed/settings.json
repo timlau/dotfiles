@@ -8,7 +8,7 @@
 // command palette (cmd-shift-p / ctrl-shift-p)
 {
   "edit_predictions": {
-    "provider": "copilot"
+    "provider": "zed"
   },
   "ssh_connections": [
     {
@@ -19,28 +19,28 @@
   ],
   "hard_tabs": false,
   "which_key": {
-    "enabled": true,
+    "enabled": true
   },
   "format_on_save": "off",
   "colorize_brackets": true,
   "diagnostics": {
     "inline": {
-      "enabled": true,
-    },
+      "enabled": true
+    }
   },
   "agent": {
     "default_model": {
       "provider": "copilot_chat",
-      "model": "claude-haiku-4.5",
+      "model": "claude-haiku-4.5"
     },
-    "model_parameters": [],
+    "model_parameters": []
   },
   "buffer_font_family": "JetBrains Mono",
   "autosave": "on_focus_change",
   "icon_theme": {
     "mode": "system",
     "light": "Zed (Default)",
-    "dark": "Material Icon Theme",
+    "dark": "Material Icon Theme"
   },
   "current_line_highlight": "none",
   "vim_mode": true,
@@ -51,10 +51,10 @@
   "theme": {
     "mode": "system",
     "light": "Ayu Light",
-    "dark": "GitHub Dark",
+    "dark": "GitHub Dark"
   },
   "file_types": { "XML": ["*.xml.in", "*.xml.in.in"] },
-  "outline_panel": { "dock": "right" },
+  "outline_panel": { "dock": "left" },
   "project_panel": { "dock": "left" },
   "git_panel": { "tree_view": true, "dock": "left" },
 
@@ -65,19 +65,19 @@
           "maxLength": 120,
           "lifetimeElisionHints": {
             "enable": "skip_trivial",
-            "useParameterNames": true,
+            "useParameterNames": true
           },
           "closureReturnTypeHints": {
-            "enable": "always",
-          },
-        },
-      },
+            "enable": "always"
+          }
+        }
+      }
     },
     "clangd": {
       "binary": {
-        "arguments": ["-background-index", "-compile-commands-dir=build/debug"],
-      },
-    },
+        "arguments": ["-background-index", "-compile-commands-dir=build/debug"]
+      }
+    }
   },
   "languages": {
     "Python": {
@@ -87,22 +87,22 @@
         "!basedpyright",
         "!pyrefly",
         "!pyright",
-        "!pylsp",
-      ],
-    },
+        "!pylsp"
+      ]
+    }
   },
   "theme_overrides": {
     "GitHub Dark": {
       "syntax": {
         "comment": {
           "font_style": "italic",
-          "color": "#20918f",
+          "color": "#20918f"
         },
         "comment.doc": {
           "font_style": "italic",
-          "color": "#20918f",
-        },
-      },
-    },
-  },
+          "color": "#20918f"
+        }
+      }
+    }
+  }
 }

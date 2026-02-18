@@ -28,4 +28,9 @@
       "ctrl-p": "file_finder::Toggle",
     },
   },
+  {
+    "bindings": {
+      "ctrl-'": "vim::ToggleComments"
+    }
+  }
 ]

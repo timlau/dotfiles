@@ -52,6 +52,10 @@ function repo-upd --description "update local audio reop"
     createrepo_c $HOME/OneDrive/RPMS
 end
 
+function repo-list --description "list packages in local-audio repo"
+    sudo dnf --repo=local\* list --available --refresh
+end
+
 function cm-clean-all --description "cmake all clean build directories"
     echo "Removing build directory..."
     rm -rf build
@@ -67,34 +71,29 @@ function cm-dbg-clean --description "cmake clean build directory (Debug)"
 end
 
 function cm-cfg --description "cmake -B -DCMAKE_BUILD_TYPE=Release"
-    set cores (nproc)
-    set cores (math $cores - 2)
+    set cores (nproc --ignore=2)
     set -x CMAKE_BUILD_PARALLEL_LEVEL $cores
     cmake -B build/release -DCMAKE_BUILD_TYPE=Release -G Ninja $argv
 end
 
 function cm-dbg-cfg --description "cmake -B -DCMAKE_BUILD_TYPE=Debug"
-    set cores (nproc)
-    set cores (math $cores - 2)
+    set cores (nproc --ignore=2)
     set -x CMAKE_BUILD_PARALLEL_LEVEL $cores
     cmake -B build/debug -DCMAKE_BUILD_TYPE=Debug -G Ninja $argv
 end
 
 function cm-build --description "cmake build"
-    set cores (nproc)
-    set cores (math $cores - 2)
+    set cores (nproc --ignore=2)
     cmake --build build/release --config Release -j$cores $argv
 end
 
 function cm-dbg-build --description "cmake build"
-    set cores (nproc)
-    set cores (math $cores - 2)
+    set cores (nproc --ignore=2)
     cmake --build build/debug --config Debug -j$cores $argv
 end
 
 function cm-cfg-rpm --description "cmake -B -DCMAKE_BUILD_TYPE=Release with RPM build flags"
-    set cores (nproc)
-    set cores (math $cores - 2)
+    set cores (nproc --ignore=2)
     set -x CMAKE_BUILD_PARALLEL_LEVEL $cores
     set rpmflags $(rpm --eval '%{build_cxxflags}')
     set newflags (echo $rpmflags | string collect | string replace "flto=auto" "flto=$cores")
@@ -103,11 +102,11 @@ function cm-cfg-rpm --description "cmake -B -DCMAKE_BUILD_TYPE=Release with RPM 
 end
 
 function cm-inst --description "cmake install in local .BUILDROOT/usr"
-    rm -rf .BUILDROOT
+    rm -rf BUILDROOT
     cmake --install build/release --prefix ./BUILDROOT/usr $argv
 end
 
 function cm-dbg-inst --description "cmake install in local .BUILDROOT/usr"
-    rm -rf .BUILDROOT
+    rm -rf BUILDROOT
     cmake --install build/debug --prefix ./BUILDROOT/usr $argv
 end
