@@ -48,6 +48,6 @@ function refresh_mpv
     cd -
 end
 
-function cm
+function cm --wraps chezmoi --description 'alias cm=chezmoi'
     chezmoi $argv
 end
