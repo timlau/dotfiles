@@ -1,0 +1,155 @@
+// Zed settings
+//
+// For information on how to configure Zed, see the Zed
+// documentation: https://zed.dev/docs/configuring-zed
+//
+// To see all of Zed's default settings without changing your
+// custom settings, run `zed: open default settings` from the
+// command palette (cmd-shift-p / ctrl-shift-p)
+{
+  "collaboration_panel": {
+    "dock": "right"
+  },
+  "agent_servers": {
+    "opencode": {
+      "type": "registry"
+    },
+    "github-copilot-cli": {
+      "type": "registry",
+    },
+  },
+  "base_keymap": "VSCode",
+  "edit_predictions": {
+    "mode": "subtle",
+    "provider": "zed",
+  },
+  "ssh_connections": [
+    {
+      "host": "github.com",
+      "args": [],
+      "projects": [],
+    },
+  ],
+  "hard_tabs": false,
+  "which_key": {
+    "enabled": true,
+  },
+  "format_on_save": "off",
+  "colorize_brackets": true,
+  "diagnostics": {
+    "inline": {
+      "enabled": true,
+    },
+  },
+  "agent": {
+    "dock": "left",
+    "default_model": {
+      "provider": "copilot_chat",
+      "model": "claude-haiku-4.5",
+    },
+    "model_parameters": [],
+  },
+  "buffer_font_family": "CaskaydiaMono Nerd Font Mono",
+  "autosave": "on_focus_change",
+  "icon_theme": {
+    "mode": "light",
+    "light": "Zed (Default)",
+    "dark": "Material Icon Theme",
+  },
+  "current_line_highlight": "none",
+  "vim_mode": true,
+  "ui_font_size": 18.0,
+  "buffer_font_size": 16,
+  "agent_ui_font_size": 18,
+  "agent_buffer_font_size": 16,
+  "theme": {
+    "mode": "dark",
+    "light": "One Light",
+    "dark": "Dune"
+  },
+  "file_types": { "XML": ["*.xml.in", "*.xml.in.in"] },
+  "outline_panel": { "dock": "right" },
+  "project_panel": { "dock": "right" },
+  "git_panel": { "tree_view": true, "dock": "right" },
+
+  "lsp": {
+    "lua-language-server": {
+      "initialization_options": {
+        "diagnostics.globals": ["mp"],
+      },
+    },
+    "ruby-lsp": {
+      "initialization_options": {
+        "formatter": "standard",
+        "linters": ["standard"],
+      },
+    },
+    "rust-analyzer": {
+      "initialization_options": {
+        "inlayHints": {
+          "maxLength": 120,
+          "lifetimeElisionHints": {
+            "enable": "skip_trivial",
+            "useParameterNames": true,
+          },
+          "closureReturnTypeHints": {
+            "enable": "always",
+          },
+        },
+      },
+    },
+    "clangd": {
+      "binary": {
+        "arguments": ["-background-index", "-compile-commands-dir=build/debug"],
+      },
+    },
+  },
+  "languages": {
+    "Lua": {
+      "format_on_save": "off",
+      "tab_size": 2,
+      "remove_trailing_whitespace_on_save": false,
+      "preferred_line_length": 150,
+      "formatter": "language_server",
+    },
+    "Ruby": {
+      "show_edit_predictions": true,
+      "format_on_save": "on",
+      "language_servers": [
+        "ruby-lsp",
+        "!rubocop",
+        "!solargraph",
+        "!sorbet",
+        "!kanayago",
+        "!steep",
+        "...",
+      ],
+    },
+
+    "Python": {
+      "language_servers": [
+        "ruff",
+        "ty",
+        "!basedpyright",
+        "!pyrefly",
+        "pyright",
+        "!pylsp",
+      ],
+    },
+  },
+
+  "theme_overrides": {
+    "GitHub Dark": {
+      "syntax": {
+        "comment": {
+          "font_style": "italic",
+          "color": "#20918f",
+        },
+        "comment.doc": {
+          "font_style": "italic",
+          "color": "#20918f",
+        },
+      },
+    },
+  },
+}

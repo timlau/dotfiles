@@ -1,0 +1,54 @@
+
+// Zed keymap
+//
+// For information on binding keys, see the Zed
+// documentation: https://zed.dev/docs/key-bindings
+//
+// To see the default key bindings run `zed: open default keymap`
+// from the command palette.
+[
+  // Editor specific key bindings (work when editing)
+  {
+    "context": "Editor",
+    "bindings": {
+      "ctrl-a": "editor::SelectAll",
+      "ctrl-c": "editor::Copy",
+      "ctrl-v": "editor::Paste",
+      "ctrl-s": "workspace::Save",
+      "ctrl-w": "pane::CloseActiveItem",
+      "super-r": "editor::ToggleRelativeLineNumbers",
+    },
+
+  },
+  // General key bindings (work everywhere in Zed)
+  {
+    "bindings": {
+      "ctrl-alt-t": "terminal_panel::Toggle",
+      "super-d": "workspace::CloseAllDocks",
+      "ctrl-p": "file_finder::Toggle",
+    },
+  },
+  {
+    "bindings": {
+      "ctrl-'": "vim::ToggleComments"
+    }
+  },
+  {
+    "context": "Workspace",
+    "unbind": {
+      "ctrl-shift-b": "outline_panel::ToggleFocus"
+    }
+  },
+  {
+    "context": "Workspace",
+    "bindings": {
+      "ctrl-shift-b": "workspace::ToggleLeftDock"
+    }
+  },
+  {
+    "context": "Workspace",
+    "unbind": {
+      "ctrl-b": "workspace::ToggleLeftDock"
+    }
+  }
+]
