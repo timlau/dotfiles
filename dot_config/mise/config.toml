@@ -1,0 +1,16 @@
+
+[settings]
+idiomatic_version_file_enable_tools = ["ruby"]
+
+[settings.ruby]
+compile = false
+
+[tools]
+bitwarden-secrets-manager = { version = "latest", version_prefix = "bws-v" }
+chezmoi = "latest"
+node = "latest"
+ruby = "latest"
+ruff = "latest"
+starship = "latest"
+ty = "latest"
+uv = "latest"
