@@ -20,7 +20,7 @@
   },
   "base_keymap": "VSCode",
   "edit_predictions": {
-    "mode": "subtle",
+    "mode": "eager",
     "provider": "zed",
   },
   "ssh_connections": [
@@ -52,7 +52,7 @@
   "buffer_font_family": "CaskaydiaMono Nerd Font Mono",
   "autosave": "on_focus_change",
   "icon_theme": {
-    "mode": "light",
+    "mode": "dark",
     "light": "Zed (Default)",
     "dark": "Material Icon Theme",
   },
@@ -65,7 +65,7 @@
   "theme": {
     "mode": "dark",
     "light": "One Light",
-    "dark": "Dune"
+    "dark": "Ayu Dark"
   },
   "file_types": { "XML": ["*.xml.in", "*.xml.in.in"] },
   "outline_panel": { "dock": "right" },
